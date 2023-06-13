@@ -1,0 +1,62 @@
+{
+  "name": "base-theme",
+  "private": true,
+  "version": "0.0.0",
+  "description": "S.E.E.D.: Starter Environment for (Shopify theme) Development",
+  "author": "Chalhoub Engineering",
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "dev": "run-p vite:serve shopify:serve",
+    "build": "vite build",
+    "dev:sync": "run-p vite:serve \"shopify:serve -- --theme-editor-sync\"",
+    "start": "cross-env NODE_ENV=production run-s vite:build shopify:serve",
+    "start:sync": "cross-env NODE_ENV=production run-s vite:build \"shopify:serve -- --theme-editor-sync\"",
+    "watch": "run-p vite:watch shopify:serve",
+    "watch:sync": "run-p vite:watch \"shopify:serve -- --theme-editor-sync\"",
+    "vite:build": "vite build",
+    "vite:serve": "del-cli assets && vite",
+    "vite:watch": "del-cli assets && cross-env VITE_WATCH=true vite build",
+    "shopify:serve": "dotenv shopify theme dev",
+    "shopify:push": "dotenv shopify theme push --nodelete --ignore config/settings_data.json templates/*.json locales/*.json",
+    "shopify:push:new": "dotenv shopify theme push --unpublished",
+    "shopify:push:unsafe": "dotenv shopify theme push",
+    "shopify:pull": "dotenv shopify theme pull --nodelete",
+    "shopify:pull:content": "dotenv shopify theme pull --nodelete --only config/settings_data.json templates/*.json locales/*.json"
+  },
+  "dependencies": {
+    "@shopify/theme-addresses": "^4.1.1",
+    "@shopify/theme-cart": "^4.1.1",
+    "@shopify/theme-product": "^4.1.1",
+    "@shopify/theme-product-form": "^4.1.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.2",
+    "cookies-js": "^1.2.3",
+    "embla-carousel": "^6.2.0",
+    "lodash": "^4.17.21",
+    "tailwindcss": "^3.1.5"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.23.0",
+    "@shopify/theme": "^3.23.0",
+    "cross-env": "^7.0.3",
+    "del-cli": "^5.0.0",
+    "dotenv-cli": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.12",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.1.0",
+    "postcss-mixins": "^9.0.2",
+    "postcss-preset-env": "^7.4.3",
+    "prettier": "^2.8.4",
+    "vite": "^4.0.4",
+    "vite-plugin-shopify": "^0.0.12",
+    "vite-plugin-shopify-modules": "^0.0.6",
+    "vite-plugin-shopify-theme-settings": "^0.0.7"
+  },
+  "engines": {
+    "node": ">= 16.14.2"
+  }
+}

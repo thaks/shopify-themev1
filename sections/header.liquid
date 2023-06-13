@@ -1,0 +1,26 @@
+{% render 'vite-tag' with '@modules/header' %}
+
+<sticky-header hide-threshold="200">
+  {% comment %} TOPBAR  {% endcomment %}
+  <div class="text-[12px] bg-black h-[30px] z-40 flex justify-between px-2" announcement-bar>
+    <span class="flex items-center justify-center text-white">Customer support</span>
+    <span class="flex items-center justify-center text-white">Sign Up for our Newsletter: 10% discount</span>
+    <span class="flex items-center justify-center text-white">Find your nearest store </span>
+  </div>
+
+  {% comment %} HEADER  {% endcomment %}
+  <header header class="transition-all">
+    {% comment %} LOGOBAR  {% endcomment %}
+    <div
+      class="grid h-[80px] overflow-hidden bg-red-100"
+      logobar
+    >
+      <div class="flex items-center justify-center min-h-0">
+        <p class="p-1">mquam incidunt exercitationem vel animi magni!</p>
+      </div>
+    </div>
+
+    {% comment %} NAVBAR  {% endcomment %}
+    <div class="h-10 bg-gray-100"></div>
+  </header>
+</sticky-header>

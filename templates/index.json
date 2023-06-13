@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "947e67cd-7e85-4762-8bf9-351fc31a38d7": {
+      "type": "hero-slider",
+      "blocks": {
+        "template--19293206348064__947e67cd-7e85-4762-8bf9-351fc31a38d7-1685978741a43f0d11-0": {
+          "type": "hero-slide",
+          "settings": {
+            "background_type": "image",
+            "image_alt": "",
+            "video_mobile": "",
+            "video_desktop": "",
+            "heading_style": "light",
+            "subheading": "Subheadline",
+            "heading": "Headline for Hero",
+            "link_text_1": "Button 1",
+            "link_url_1": "\/",
+            "link_style_1": "dark",
+            "link_text_2": "",
+            "link_url_2": "",
+            "link_style_2": "light"
+          }
+        }
+      },
+      "block_order": [
+        "template--19293206348064__947e67cd-7e85-4762-8bf9-351fc31a38d7-1685978741a43f0d11-0"
+      ],
+      "settings": {
+      }
+    },
+    "c3c4d014-0964-4cf3-b63f-bfaa7e4de4d9": {
+      "type": "style-guide",
+      "settings": {
+      }
+    },
+    "7369161b-3b9d-4bd2-97b7-861244364bed": {
+      "type": "style-guide",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "947e67cd-7e85-4762-8bf9-351fc31a38d7",
+    "c3c4d014-0964-4cf3-b63f-bfaa7e4de4d9",
+    "7369161b-3b9d-4bd2-97b7-861244364bed"
+  ]
+}

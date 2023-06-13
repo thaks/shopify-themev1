@@ -1,0 +1,58 @@
+variables:
+  NODE_IMAGE: node:18-alpine
+  SHOPIFY_FLAG_STORE: $DEV_STORE
+  SHOPIFY_CLI_THEME_TOKEN: $DEV_TOKEN
+  SHOPIFY_CLI_TTY: 0
+  THEME_NAME: develop
+
+stages:
+  - test
+  - deploy_develop
+  - deploy_production
+
+################################################################################ TESTS
+
+test:
+  stage: test
+  image: $NODE_IMAGE
+  script:
+    - npm install
+    - npm run build
+
+################################################################################ STAGING
+
+deploy_uae_develop:
+  stage: deploy_develop
+  environment:
+    name: development
+  only:
+    refs:
+      - develop
+  image: $NODE_IMAGE
+  script:
+      - apk add --update --no-cache build-base libffi-dev ruby ruby-dev ruby-etc ruby-io-console ruby-irb ruby-json ruby-rake ruby-bigdecimal ruby-webrick
+      - gem update
+      - gem install bundler
+      - npm install -g @shopify/cli@latest @shopify/theme@latest
+      - npm install
+      - npm run build
+      - shopify theme push --nodelete --ignore config/settings_data.json templates/*.json locales/*.json --theme ${THEME_NAME}
+
+deploy_uae_production:
+  stage: deploy_production
+  environment:
+    name: production
+  variables:
+    THEME_NAME: main
+  only:
+    refs:
+      - master
+  image: $NODE_IMAGE
+  script:
+      - apk add --update --no-cache build-base libffi-dev ruby ruby-dev ruby-etc ruby-io-console ruby-irb ruby-json ruby-rake ruby-bigdecimal ruby-webrick
+      - gem update
+      - gem install bundler
+      - npm install -g @shopify/cli@latest @shopify/theme@latest
+      - npm install
+      - npm run build
+      - shopify theme push --nodelete --ignore config/settings_data.json templates/*.json locales/*.json --theme ${THEME_NAME}

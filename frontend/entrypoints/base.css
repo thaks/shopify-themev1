@@ -1,0 +1,58 @@
+/**
+ * Theme.css
+ */
+
+@import "../styles/layout.css";
+@import "../styles/typography.css";
+@import "../styles/buttons.css";
+@import "../styles/overrides.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Rutan";
+    src: url('https://cdn.shopify.com/s/files/1/0762/8455/9648/files/Rutan-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Rutan";
+    src: url('https://cdn.shopify.com/s/files/1/0762/8455/9648/files/Rutan-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Rutan";
+    src: url('https://cdn.shopify.com/s/files/1/0762/8455/9648/files/Rutan-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Rutan";
+    src: url('https://cdn.shopify.com/s/files/1/0762/8455/9648/files/Rutan-Medium.ttf?v=1686259710') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Rutan";
+    src: url('https://cdn.shopify.com/s/files/1/0762/8455/9648/files/Rutan-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Rutan";
+    src: url('https://cdn.shopify.com/s/files/1/0762/8455/9648/files/Rutan-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Rutan";
+    src: url('https://cdn.shopify.com/s/files/1/0762/8455/9648/files/Rutan-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+}
+
